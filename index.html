@@ -1,66 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minrui Tian - GitHub Pages</title>
+    <!-- Include FontAwesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
             line-height: 1.6;
             color: #333;
+            margin: 0;
+            /* Remove margin */
+            padding: 0;
+            /* Remove padding */
         }
 
         header {
-            text-align: center;
-            margin-bottom: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            /* Add padding for better spacing */
+            position: absolute;
+            top: 0;
         }
 
         h1 {
             color: #0366d6;
+            margin-top: 10px;
+            /* Adjust top margin */
+            margin-bottom: 10px;
+            /* Adjust bottom margin */
+        }
+
+        img {
+            border-radius: 50%;
+            /* Make the image oval by setting border-radius to 50% */
+            max-width: 240px;
+            height: auto;
+            margin-bottom: 10px;
+            /* Adjust bottom margin */
+        }
+
+        a {
+            text-decoration: none;
+            color: #0366d6;
+            margin-right: 15px;
+        }
+
+        .cv-link::before,
+        .email-link::before,
+        .wechat-link::before {
+            font-family: 'FontAwesome';
+            margin-right: 5px;
+        }
+
+        .cv-link::before {
+            content: '\f1c1';
+            /* FontAwesome code for file */
+        }
+
+        .email-link::before {
+            content: '\f0e0';
+            /* FontAwesome code for envelope */
+        }
+
+        .wechat-link::before {
+            content: '\f1d7';
+            /* FontAwesome code for WeChat */
         }
 
         main {
             max-width: 800px;
-            margin: 0 auto;
-        }
-
-        img {
-            border-radius: 50%; /* Make the image round */
-            max-width: 100%; /* Ensure the image doesn't exceed its container */
-            margin-bottom: 20px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 0 20px;
+            /* Add padding for better spacing */
         }
 
         footer {
             margin-top: 30px;
-            text-align: center;
             color: #777;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 20px;
+            /* Add padding for better spacing */
         }
+
+        /* Updated styling for headers */
+        h2,
+        h3 {
+            color: #4CAF50;
+            /* Green color */
+        }
+
+        /* Added styling for the fun fact */
+        .fun-fact {
+            color: #FF9800;
+            /* Orange color */
+            font-weight: bold;
+            /* Bold text */
+            margin-top: 10px;
+        }
+
+        #map {
+        height: 450px;
+        /* Adjust the height of the map */
+        width: auto;
+        border:solid 3px #00FF33; 
+        border-radius:5px; 
+        }
+
+
     </style>
 </head>
+
 <body>
     <header>
-        <!-- Placeholder for profile photo -->
+        <!-- Profile photo on the side with top 1/4 cropped -->
         <img src="profile.jpg" alt="Profile Photo">
-        <h1>Minrui Tian</h1>
+        <h1>Minrui Tian 田旻瑞</h1>
+        <div>
+            <a href="mailto:tian0138@umn.edu" class="email-link">Email</a>
+            <a href="CV_Minrui_Tian_copy.pdf" class="cv-link">CV</a>
+            <a href="wechat.jpg" class="wechat-link">WeChat</a>
+        </div>
     </header>
 
     <main>
         <section>
             <h2>About Me</h2>
-            <p>I am a senior student at UMN majoring in Computer Science.</p>
-            <p>I am interested in distributed systems in general, especially improving data center resilience, performance, and resource utilization by using new abstractions and tools, building and improving systems for LLM and ML, and improving data and resource management and reducing network latency at the edge.</p>
+            <p>I am a senior student at UMN majoring in Computer Science. Outside the CS, I am a life-time learner,
+                part-time world explorer, and a full-time foodie/powerlifter.</p>
+            <p class="interest">I am interested in distributed systems in general, especially improving data center
+                resilience, performance, and resource utilization by using new abstractions and tools, building and
+                improving systems for LLM and ML, and improving data and resource management and reducing network
+                latency at the edge.</p>
+            <!-- Added fun fact -->
+            <p class="fun-fact">Fun Fact: Went from 300lbs to 140lbs (losing 160lbs) in two years during senior high
+                school (self-claimed dietitian).</p>
+        </section>
+
+        <section class="experience">
+            <h3>Research Experience</h3>
+            <p>
+                <strong>Research Assistant - Dense IoT Project (Aiming for Middleware 2024)</strong><br> Jan. 2023-Present<br>
+                Developed a Python Execution Engine as the kernel of a distributed IoT system. Utilized REST API and
+                WebSocket API and implemented load balancing functionality to enable assigning advanced programming
+                tasks across heterogeneous devices to achieve complex automation, enhance efficiency, and ensure
+                effective communication on AWS EC2 for scalability.<br> Implemented caching for kernel instances to
+                optimize leader-follower node communication, boosting overall performance.<br> Deployed Raspberry Pis
+                running kernel instances with Zigbee Sticks to connect to Aqara sensors.
+            </p>
+        </section>
+
+        <!-- Added Work Experience section -->
+        <section class="experience">
+            <h3>Work Experience</h3>
+            <p>
+                <strong>Software Engineer Intern - Resource Pro</strong><br> May 2023-August 2023<br> Led the
+                deployment of a RoBERTa natural language processing model in C++ using Microsoft's Onnxruntime
+                framework and CMake for compilation on Visual Studio.<br> Enhanced efficiency by encapsulating C++
+                deployment into a function with C++/CLI for data retrieval and result uploading that leveraged C# and
+                .NET to seamlessly interact with Azure Service Bus Queue. This optimization achieved a notable 3x
+                performance improvement compared to the previous Python-based deployment approach.
+            </p>
         </section>
 
         <section>
-            <h2>Contact</h2>
-            <p>You can reach me at <a href="mailto:tian0138@umn.edu">tian0138@umn.edu</a>.</p>
+            <h2>Reward</h2>
+            <p> Global Excellence Scholarship 2021-2024<br> Maximillian Lando Scholarship 2023-2024
+            </p>
+        </section>
+        <section>
+            <h2>Places I Have Been</h2>
+            <div id="map"></div>
         </section>
     </main>
 
     <footer>
         <p>© 2023 Minrui Tian. All rights reserved.</p>
     </footer>
-</body>
+       
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC26Qlk2viJc6qB3epb0U4i1syzDE5FrEI&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: { lat: 40.7128, lng: -74.0060 }, // Set an initial map center (e.g., New York City)
+                zoom: 3 // Set initial zoom level
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Add markers for specified countries with default appearance
+            var countries = [
+                { lat: 37.7749, lng: -122.4194, title: 'United States' }, // US
+                { lat: 56.1304, lng: -106.3468, title: 'Canada' },
+                { lat: 60.1695, lng: 24.9354, title: 'North Europe' }, // Example for North Europe
+                { lat: 41.9028, lng: 12.4964, title: 'Italy' },
+                { lat: 51.1657, lng: 10.4515, title: 'Germany' },
+                { lat: 46.6035, lng: 1.8883, title: 'France' },
+                { lat: 47.5162, lng: 14.5501, title: 'Austria' },
+                { lat: 36.2048, lng: 138.2529, title: 'Japan' },
+                { lat: 35.9078, lng: 127.7669, title: 'South Korea' },
+                { lat: 1.3521, lng: 103.8198, title: 'Singapore' },
+                { lat: 60.4720, lng: 8.4689, title: 'Norway' },
+                { lat: 60.1282, lng: 18.6435, title: 'Sweden' },
+                { lat: 61.9241, lng: 25.7482, title: 'Finland' },
+                { lat: 56.2639, lng: 9.5018, title: 'Denmark' },
+                { lat: 61.5240, lng: 105.3188, title: 'Russia' },
+                { lat: 35.8617, lng: 104.1954, title: 'China' } // China
+            ];
+
+            // Loop through countries and add markers to the map
+            for (var i = 0; i < countries.length; i++) {
+                var marker = new google.maps.Marker({
+                    position: { lat: countries[i].lat, lng: countries[i].lng },
+                    map: map,
+                    title: countries[i].title
+                });
+            }
+        }
+    </script>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
