@@ -8,6 +8,33 @@
     <!-- Include FontAwesome library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+
+        @media only screen and (max-width: 600px) {
+            body {
+                /* Adjust styles for smaller screens */
+                font-size: 14px;
+                margin-top: 60px; /* Add margin to create space for the fixed header */
+            }
+
+            header {
+                /* Adjust header styles for smaller screens */
+                padding: 10px;
+                position: relative;
+            }
+
+            h1 {
+                /* Adjust h1 styles for smaller screens */
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            img {
+                /* Adjust image styles for smaller screens */
+                max-width: 120px;
+                margin-bottom: 5px;
+            }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -114,27 +141,7 @@
         border-radius:5px; 
         }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            img {
-                max-width: 80px;
-            }
-
-            a {
-                font-size: 14px;
-            }
-
-            main {
-                padding: 0 10px;
-            }
-        }
+        
 
 
     </style>
