@@ -9,31 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
 
-        @media only screen and (max-width: 600px) {
-            body {
-                /* Adjust styles for smaller screens */
-                font-size: 14px;
-                margin-top: 60px; /* Add margin to create space for the fixed header */
-            }
-
-            header {
-                /* Adjust header styles for smaller screens */
-                padding: 10px;
-                position: relative;
-            }
-
-            h1 {
-                /* Adjust h1 styles for smaller screens */
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            img {
-                /* Adjust image styles for smaller screens */
-                max-width: 120px;
-                margin-bottom: 5px;
-            }
-        }
+        
 
         body {
             font-family: 'Arial', sans-serif;
@@ -142,22 +118,52 @@
         }
 
         
+        @media only screen and (max-width: 600px) {
+            body {
+                /* Adjust styles for smaller screens */
+                font-size: 14px;
+                margin-top: auto; /* Add margin to create space for the fixed header */
+                 /* display: flex; */
+                top:200px;
+            }
 
+            header {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 20px;
+                /* Add padding for better spacing */
+                position: relative;
+                top: 0;
+            }
+
+            h1 {
+                /* Adjust h1 styles for smaller screens */
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            img {
+                /* Adjust image styles for smaller screens */
+                max-width: 120px;
+                margin-bottom: 5px;
+            }
+        }
 
     </style>
 </head>
 
+<header>
+    <!-- Profile photo on the side with top 1/4 cropped -->
+    <img src="profile.jpg" alt="Profile Photo">
+    <h1>Minrui Tian 田旻瑞</h1>
+    <div>
+        <a href="mailto:tian0138@umn.edu" class="email-link">Email</a>
+        <a href="CV_Minrui_Tian_copy.pdf" class="cv-link">CV</a>
+        <a href="wechat.jpg" class="wechat-link">WeChat</a>
+    </div>
+</header>
 <body>
-    <header>
-        <!-- Profile photo on the side with top 1/4 cropped -->
-        <img src="profile.jpg" alt="Profile Photo">
-        <h1>Minrui Tian 田旻瑞</h1>
-        <div>
-            <a href="mailto:tian0138@umn.edu" class="email-link">Email</a>
-            <a href="CV_Minrui_Tian_copy.pdf" class="cv-link">CV</a>
-            <a href="wechat.jpg" class="wechat-link">WeChat</a>
-        </div>
-    </header>
+    
 
     <main>
         <section>
@@ -223,36 +229,37 @@
             };
             var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-            // Add markers for specified countries with default appearance
+            // Define LatLng objects for specified countries
             var countries = [
-                { lat: 37.7749, lng: -122.4194, title: 'United States' }, // US
-                { lat: 56.1304, lng: -106.3468, title: 'Canada' },
-                { lat: 60.1695, lng: 24.9354, title: 'North Europe' }, // Example for North Europe
-                { lat: 41.9028, lng: 12.4964, title: 'Italy' },
-                { lat: 51.1657, lng: 10.4515, title: 'Germany' },
-                { lat: 46.6035, lng: 1.8883, title: 'France' },
-                { lat: 47.5162, lng: 14.5501, title: 'Austria' },
-                { lat: 36.2048, lng: 138.2529, title: 'Japan' },
-                { lat: 35.9078, lng: 127.7669, title: 'South Korea' },
-                { lat: 1.3521, lng: 103.8198, title: 'Singapore' },
-                { lat: 60.4720, lng: 8.4689, title: 'Norway' },
-                { lat: 60.1282, lng: 18.6435, title: 'Sweden' },
-                { lat: 61.9241, lng: 25.7482, title: 'Finland' },
-                { lat: 56.2639, lng: 9.5018, title: 'Denmark' },
-                { lat: 61.5240, lng: 105.3188, title: 'Russia' },
-                { lat: 35.8617, lng: 104.1954, title: 'China' } // China
+                { name: 'United States', latLng: { lat: 37.7749, lng: -122.4194 } }, // US
+                { name: 'Canada', latLng: { lat: 56.1304, lng: -106.3468 } },
+                { name: 'North Europe', latLng: { lat: 60.1695, lng: 24.9354 } },
+                { name: 'Italy', latLng: { lat: 41.9028, lng: 12.4964 } },
+                { name: 'Germany', latLng: { lat: 51.1657, lng: 10.4515 } },
+                { name: 'France', latLng: { lat: 46.6035, lng: 1.8883 } },
+                { name: 'Austria', latLng: { lat: 47.5162, lng: 14.5501 } },
+                { name: 'Japan', latLng: { lat: 36.2048, lng: 138.2529 } },
+                { name: 'South Korea', latLng: { lat: 35.9078, lng: 127.7669 } },
+                { name: 'Singapore', latLng: { lat: 1.3521, lng: 103.8198 } },
+                { name: 'Norway', latLng: { lat: 60.4720, lng: 8.4689 } },
+                { name: 'Sweden', latLng: { lat: 60.1282, lng: 18.6435 } },
+                { name: 'Finland', latLng: { lat: 61.9241, lng: 25.7482 } },
+                { name: 'Denmark', latLng: { lat: 56.2639, lng: 9.5018 } },
+                { name: 'Russia', latLng: { lat: 61.5240, lng: 105.3188 } },
+                { name: 'China', latLng: { lat: 35.8617, lng: 104.1954 } }
             ];
 
             // Loop through countries and add markers to the map
             for (var i = 0; i < countries.length; i++) {
                 var marker = new google.maps.Marker({
-                    position: { lat: countries[i].lat, lng: countries[i].lng },
+                    position: countries[i].latLng,
                     map: map,
-                    title: countries[i].title
+                    title: countries[i].name
                 });
             }
         }
     </script>
+
 
 </html>
 
