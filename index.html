@@ -167,12 +167,11 @@
         <section class="experience">
             <h3>Research Experience</h3>
             <p>
-                <strong>Research Assistant - Dense IoT Project (Aiming for Middleware 2024)</strong><br> Jan. 2023-Present<br>
+                <strong>Research Assistant - Dense IoT Project (Aiming for ICDCS 2024)</strong><br> Jan. 2023-Present<br>
                 Developed a Python Execution Engine as the kernel of a distributed IoT system. Utilized REST API and
                 WebSocket API and implemented load balancing functionality to enable assigning advanced programming
                 tasks across heterogeneous devices to achieve complex automation, enhance efficiency, and ensure
-                effective communication on AWS EC2 for scalability.<br> Implemented caching for kernel instances to
-                optimize leader-follower node communication, boosting overall performance.<br> Deployed Raspberry Pis
+                effective communication on AWS EC2 for scalability.<br> Deployed Raspberry Pis
                 running kernel instances with Zigbee Sticks to connect to Aqara sensors.
             </p>
         </section>
@@ -196,10 +195,6 @@
             </p>
         </section>
 
-        <section>
-            <h2>Places I Have Been</h2>
-            <div id="map" style="width:100%; height:500px;"></div>
-        </section>
         
     </main>
 
@@ -207,51 +202,8 @@
         <p>© 2023 Minrui Tian. All rights reserved.</p>
     </footer>
        
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC26Qlk2viJc6qB3epb0U4i1syzDE5FrEI&callback=initMap" async defer></script>
-    <script>
-        function initMap() {
-            var mapOptions = {
-                center: { lat: 40.7128, lng: -74.0060 }, // Set an initial map center (e.g., New York City)
-                zoom: 3 // Set initial zoom level
-            };
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            // Define LatLng objects for specified countries
-            var countries = [
-                { name: 'United States', latLng: { lat: 37.7749, lng: -122.4194 } }, // US
-                { name: 'Canada', latLng: { lat: 56.1304, lng: -106.3468 } },
-                { name: 'North Europe', latLng: { lat: 60.1695, lng: 24.9354 } },
-                { name: 'Italy', latLng: { lat: 41.9028, lng: 12.4964 } },
-                { name: 'Germany', latLng: { lat: 51.1657, lng: 10.4515 } },
-                { name: 'France', latLng: { lat: 46.6035, lng: 1.8883 } },
-                { name: 'Austria', latLng: { lat: 47.5162, lng: 14.5501 } },
-                { name: 'Japan', latLng: { lat: 36.2048, lng: 138.2529 } },
-                { name: 'South Korea', latLng: { lat: 35.9078, lng: 127.7669 } },
-                { name: 'Singapore', latLng: { lat: 1.3521, lng: 103.8198 } },
-                { name: 'Norway', latLng: { lat: 60.4720, lng: 8.4689 } },
-                { name: 'Sweden', latLng: { lat: 60.1282, lng: 18.6435 } },
-                { name: 'Finland', latLng: { lat: 61.9241, lng: 25.7482 } },
-                { name: 'Denmark', latLng: { lat: 56.2639, lng: 9.5018 } },
-                { name: 'Russia', latLng: { lat: 61.5240, lng: 105.3188 } },
-                { name: 'China', latLng: { lat: 35.8617, lng: 104.1954 } }
-            ];
-
-            const features = countries.map(country => {
-                return {
-                    position: new google.maps.LatLng(country.latLng.lat, country.latLng.lng),
-                    type: "info",
-                };
-            });
-
-            // Loop through countries and add markers to the map
-            for (let i = 0; i < features.length; i++) {
-                const marker = new google.maps.Marker({
-                    position: features[i].position,
-                    map: map,
-                });
-            }
-        }
-    </script>
+    
+    
 
 
 </html>
